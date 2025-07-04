@@ -1,0 +1,18 @@
+{
+  "Navbar": {
+    "home": "Ana səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "news": "Xəbərlər",
+    "contact": "Əlaqə",
+    "contactButton": "Əlaqə saxla"
+  },
+  "Footer": {
+    "home": "Ana səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "news": "Xəbərlər",
+    "contact": "Əlaqə",
+    "copyright": "© {year} Markup. Bütün hüquqlar qorunur."
+  }
+}
