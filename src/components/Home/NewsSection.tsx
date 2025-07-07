@@ -35,10 +35,11 @@ export function NewsSection() {
   ];
 
   return (
-    <section className="container mx-auto py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[32px] font-medium">Xəbər və yeniliklər</h2>
-        <Link href="#" className="text-[#3674B5] flex items-center gap-1">
+    <section className="container mx-auto py-8 px-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+        <h2 className="text-2xl sm:text-[32px] font-medium mb-4 sm:mb-0">Xəbər və yeniliklər</h2>
+        {/* "Daha çoxuna bax" link for desktop, hidden on mobile */}
+        <Link href="#" className="hidden sm:flex text-[#3674B5] items-center gap-1">
           Daha çoxuna bax
         </Link>
       </div>
@@ -46,6 +47,12 @@ export function NewsSection() {
         {newsItems.map((item, index) => (
           <NewsCard key={index} {...item} />
         ))}
+      </div>
+      
+      <div className="flex justify-end mt-8 sm:hidden">
+        <Link href="#" className="text-[#3674B5] flex items-center gap-1">
+          Daha çoxuna bax
+        </Link>
       </div>
     </section>
   );

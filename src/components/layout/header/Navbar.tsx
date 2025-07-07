@@ -1,10 +1,11 @@
 "use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { useTranslations, useLocale } from 'next-intl';
-import { Link, usePathname, useRouter } from '@/i18n/navigation';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { GoArrowUpRight } from "react-icons/go";
+import { Menu } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -13,8 +14,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 export function Navbar() {
-  const t = useTranslations('Navbar');
+  const t = useTranslations("Navbar");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -24,37 +32,82 @@ export function Navbar() {
     { code: "en", label: "EN" },
   ];
 
-  const currentLangLabel = languages.find((lang) => lang.code === locale)?.label;
-
   const handleLanguageChange = (newLocale: string) => {
     router.push(pathname, { locale: newLocale });
   };
 
-  return (
-    // DƏYİŞİKLİK 1: Əsas <nav> elementi tam eni əhatə edən və sabit olan konteynerə çevrilir.
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60">
-      
-      {/* DƏYİŞİKLİK 2: Məzmunu mərkəzdə saxlamaq üçün yeni bir daxili div əlavə edilir. */}
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        
-        {/* Logo */}
-        <div className="text-2xl font-bold">GCG</div>
+  const navLinks = [
+    { href: "#", translationKey: "home" },
+    { href: "#", translationKey: "about" },
+    { href: "#", translationKey: "services" },
+    { href: "#", translationKey: "news" },
+    { href: "#", translationKey: "contact" },
+  ];
 
-        {/* Navigation Links */}
-        <div className="hidden md:flex space-x-8">
-          <Link href="#" className="hover:text-primary">{t('home')}</Link>
-          <Link href="#" className="hover:text-primary">{t('about')}</Link>
-          <Link href="#" className="hover:text-primary">{t('services')}</Link>
-          <Link href="#" className="hover:text-primary">{t('news')}</Link>
-          <Link href="#" className="hover:text-primary">{t('contact')}</Link>
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Mobile Hamburger Menu and Logo */}
+        <div className="flex items-center md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="mr-2">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Menyunu aç</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px]">
+              <SheetHeader>
+                <div className="text-2xl font-bold text-left mb-6">GCG</div>
+              </SheetHeader>
+              <div className="flex flex-col space-y-4">
+                <div className="flex space-x-2 mb-4">
+                  {languages.map((lang) => (
+                    <Button
+                      key={lang.code}
+                      variant={locale === lang.code ? "default" : "outline"}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={locale === lang.code ? "bg-[#3674B5] text-white" : ""}
+                    >
+                      {lang.label}
+                    </Button>
+                  ))}
+                </div>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.translationKey}
+                    href={link.href}
+                    className="text-lg hover:text-primary transition-colors"
+                  >
+                    {t(link.translationKey)}
+                  </Link>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
+          <div className="text-2xl font-bold">GCG</div>
         </div>
 
-        {/* Right Section */}
-        <div className="flex items-center space-x-4">
+        {/* Desktop Navigation (Middle) */}
+        <div className="hidden md:flex space-x-8 flex-grow justify-center">
+          {navLinks.map((link) => (
+            <Link
+              key={link.translationKey}
+              href={link.href}
+              className="hover:text-primary transition-colors"
+            >
+              {t(link.translationKey)}
+            </Link>
+          ))}
+        </div>
+
+        {/* Right-side elements */}
+        <div className="flex items-center space-x-2">
+          {/* Language selection (Desktop only) */}
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger asChild className="hidden md:block">
               <Button variant="ghost" className="w-12 font-semibold">
-                {currentLangLabel}
+                {languages.find((lang) => lang.code === locale)?.label}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -70,8 +123,11 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="default" className="bg-[#3674B5] text-white flex items-center space-x-1">
-            <span>{t('contactButton')}</span>
+          <Button
+            variant="default"
+            className="bg-[#3674B5] text-white flex items-center space-x-1"
+          >
+            <span>{t("contactButton")}</span>
             <GoArrowUpRight />
           </Button>
         </div>
