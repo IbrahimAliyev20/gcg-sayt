@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NewsPage() {
+export default function TeamPage() {
   return (
     <div>page</div>
   )

@@ -24,16 +24,14 @@ const navLinkData = [
 
 export function Footer() {
   const t = useTranslations('Footer');
-  const pathname = usePathname(); // Aktiv səhifəni təyin etmək üçün
+  const pathname = usePathname(); 
   const currentYear = new Date().getFullYear();
 
   return (
-    // DİZAYN OLDUĞU KİMİ SAXLANILIB
     <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center space-y-8">
 
-          {/* 1. Sosial Media İkonları */}
           <div className="flex items-center space-x-6">
             {socialLinks.map((link) => (
               <a 
@@ -49,7 +47,6 @@ export function Footer() {
             ))}
           </div>
 
-          {/* 2. Naviqasiya Linkləri */}
           <nav>
             <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium">
               {navLinkData.map((link) => {
@@ -71,9 +68,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          {/* 3. Müəllif Hüquqları Mətni */}
           <div className="text-center text-xs text-gray-500">
-            {/* Tərcümə faylından dinamik mətn */}
             <p>{t('copyright', { year: currentYear })}</p>
           </div>
 

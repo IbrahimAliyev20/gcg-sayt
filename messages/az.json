@@ -3,7 +3,7 @@
     "home": "Ana səhifə",
     "about": "Haqqımızda",
     "services": "Xidmətlər",
-    "news": "Xəbərlər",
+    "team": "Komanda",
     "contact": "Əlaqə",
     "contactButton": "Əlaqə saxla"
   },
@@ -11,7 +11,7 @@
     "home": "Ana səhifə",
     "about": "Haqqımızda",
     "services": "Xidmətlər",
-    "news": "Xəbərlər",
+    "team": "Komanda",
     "contact": "Əlaqə",
     "copyright": "© {year} Markup. Bütün hüquqlar qorunur."
   }

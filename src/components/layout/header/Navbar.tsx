@@ -18,7 +18,7 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheetui"; // "sheetui" deyil, "sheet" olmalıdır
+} from "@/components/ui/sheetui"; 
 
 export function Navbar() {
   const t = useTranslations("Navbar");
@@ -39,7 +39,7 @@ export function Navbar() {
     { href: "/", translationKey: "home" },
     { href: "/about", translationKey: "about" },
     { href: "/service", translationKey: "services" },
-    { href: "#", translationKey: "news" },
+    { href: "/team", translationKey: "team" },
     { href: "/contact", translationKey: "contact" },
   ];
 
@@ -92,26 +92,22 @@ export function Navbar() {
               </SheetContent>
             </Sheet>
           </div>
-          {/* Loqo (həmişə görünür) */}
           <Link href="/" className="text-2xl font-bold">GCG</Link>
         </div>
 
-        {/* ORTA HİSSƏ: Desktop naviqasiyası */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.translationKey}
               href={link.href}
-              className="hover:text-primary transition-colors font-medium"
+              className="hover:text-[#3674B5] text-[#73767A] transition-colors font-normal text-[16px]"
             >
               {t(link.translationKey)}
             </Link>
           ))}
         </div>
 
-        {/* SAĞ TƏRƏF: Əlaqə və Dil seçimi */}
         <div className="flex items-center space-x-2">
-          {/* Dil seçimi (yalnız desktopda görünür) */}
           <div className="hidden md:block">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
