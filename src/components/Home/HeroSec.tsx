@@ -10,7 +10,7 @@ const StatCard = ({ value, label }: { value: string; label: string }) => (
 
 export function HeroSection() {
   return (
-    <section className="relative w-full text-white min-h-screen flex items-center">
+    <section className="relative w-full text-white  flex items-center ">
       <div
         className="absolute inset-0 bg-cover bg-center -z-10"
       >
@@ -23,18 +23,21 @@ export function HeroSection() {
       </div>
 
       <div className="absolute inset-0 bg-black/50 -z-10" />
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center py-10 md:py-20">
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center py-8 md:py-20">
         <div className="flex flex-col h-full justify-between gap-10 md:gap-20">
 
-          <div className="pt-10">
+          <div className="pt-0 md:pt-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold max-w-3xl leading-tight">
               Biz müştərilərlə birgə dəniz sənayesini inkişaf etdirməyə davam edəcəyik.
             </h1>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-center">
+          <div className='w-full flex justify-center'>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-center w-full md:w-[80%] ">
             <StatCard value="22+" label="Tətbiq olunmuş layihələr" />
             <StatCard value="12+" label="İllərlə aparılan tədqiqat və inkişaf işi" />
             <StatCard value="1000+" label="Məmnun müştəri sayı" />
+          </div>
           </div>
 
         </div>

@@ -21,27 +21,24 @@ const AdventagesSec = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24">
+    <section className="py-8  md:py-18">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center justify-around">
-          {/* Left side - Text content */}
           <div className="space-y-6 sm:space-y-8">
-            {/* Heading */}
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-blue-600 font-medium text-sm uppercase tracking-wider">
+              <p className="text-blue-600 font-normal text-sm ">
                 Üstünlüklərimiz
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[32px] font-medium text-gray-900 leading-tight">
                 Bizim dənizdəki yolumuz
               </h2>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-600 text-base  leading-relaxed">
                 Courage is another essential element in transforming dreams into
                 reality. It&apos;s about having the courage to pursue your dreams despite
                 fear, doubt.
               </p>
             </div>
 
-            {/* Features list */}
             <div className="space-y-3 sm:space-y-4">
               {features.map((feature) => (
                 <div key={feature.id} className="flex items-start space-x-3">
@@ -56,7 +53,6 @@ const AdventagesSec = () => {
             </div>
           </div>
 
-          {/* Right side - Image */}
           <div className='w-full h-[200px] sm:h-[272px] relative mt-4 rounded-2xl sm:rounded-3xl overflow-hidden bg-[#D9D9D9]'>
             <Image
               src="/images/herosec.jpg"

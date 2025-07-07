@@ -30,7 +30,7 @@ export function Footer() {
   return (
     // DİZAYN OLDUĞU KİMİ SAXLANILIB
     <footer className="bg-slate-50 border-t border-slate-200">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center space-y-8">
 
           {/* 1. Sosial Media İkonları */}

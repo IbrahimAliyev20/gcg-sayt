@@ -17,9 +17,8 @@ import {
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/components/ui/sheetui"; // "sheetui" deyil, "sheet" olmalıdır
 
 export function Navbar() {
   const t = useTranslations("Navbar");
@@ -29,7 +28,7 @@ export function Navbar() {
 
   const languages = [
     { code: "az", label: "AZ" },
-    { code: "en", label: "EN" },
+    { code: "en", label: "ENG" },
   ];
 
   const handleLanguageChange = (newLocale: string) => {
@@ -37,95 +36,108 @@ export function Navbar() {
   };
 
   const navLinks = [
-    { href: "#", translationKey: "home" },
-    { href: "#", translationKey: "about" },
-    { href: "#", translationKey: "services" },
+    { href: "/", translationKey: "home" },
+    { href: "/about", translationKey: "about" },
+    { href: "/services", translationKey: "services" },
     { href: "#", translationKey: "news" },
-    { href: "#", translationKey: "contact" },
+    { href: "/contact", translationKey: "contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Mobile Hamburger Menu and Logo */}
-        <div className="flex items-center md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="mr-2">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Menyunu aç</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px]">
-              <SheetHeader>
-                <div className="text-2xl font-bold text-left mb-6">GCG</div>
-              </SheetHeader>
-              <div className="flex flex-col space-y-4">
-                <div className="flex space-x-2 mb-4">
-                  {languages.map((lang) => (
-                    <Button
-                      key={lang.code}
-                      variant={locale === lang.code ? "default" : "outline"}
-                      onClick={() => handleLanguageChange(lang.code)}
-                      className={locale === lang.code ? "bg-[#3674B5] text-white" : ""}
-                    >
-                      {lang.label}
-                    </Button>
-                  ))}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60 h-[61px] flex items-center">
+      <div className="container mx-auto px-4 flex items-center justify-between w-full">
+        {/* SOL TƏRƏF: Mobil menyu və Loqo */}
+        <div className="flex items-center">
+          {/* Mobil Menyu (yalnız mobildə görünür) */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="mr-2">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Menyunu aç</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[300px] p-0 mt-[60px] z-10">
+                <div className="flex flex-col h-full">
+                  <div className="p-6 border-b">
+                    <div className="flex space-x-2">
+                      {languages.map((lang) => (
+                        <Button
+                          key={lang.code}
+                          variant={locale === lang.code ? "default" : "outline"}
+                          onClick={() => handleLanguageChange(lang.code)}
+                          className={`w-1/2 px-4 py-2 ${
+                            locale === lang.code 
+                              ? "bg-[#3674B5] text-white hover:bg-[#3674B5]/90" 
+                              : "border-gray-300 hover:bg-gray-50"
+                          }`}
+                        >
+                          {lang.label}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex-1 p-6">
+                    <div className="flex flex-col space-y-6">
+                      {navLinks.map((link) => (
+                        <Link
+                          key={link.translationKey}
+                          href={link.href}
+                          className="text-lg text-gray-700 hover:text-[#3674B5] transition-colors font-medium"
+                        >
+                          {t(link.translationKey)}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.translationKey}
-                    href={link.href}
-                    className="text-lg hover:text-primary transition-colors"
-                  >
-                    {t(link.translationKey)}
-                  </Link>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
+          {/* Loqo (həmişə görünür) */}
           <div className="text-2xl font-bold">GCG</div>
         </div>
 
-        {/* Desktop Navigation (Middle) */}
-        <div className="hidden md:flex space-x-8 flex-grow justify-center">
+        {/* ORTA HİSSƏ: Desktop naviqasiyası */}
+        <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.translationKey}
               href={link.href}
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors font-medium"
             >
               {t(link.translationKey)}
             </Link>
           ))}
         </div>
 
-        {/* Right-side elements */}
+        {/* SAĞ TƏRƏF: Əlaqə və Dil seçimi */}
         <div className="flex items-center space-x-2">
-          {/* Language selection (Desktop only) */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild className="hidden md:block">
-              <Button variant="ghost" className="w-12 font-semibold">
-                {languages.find((lang) => lang.code === locale)?.label}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {languages.map((lang) => (
-                <DropdownMenuItem
-                  key={lang.code}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className="cursor-pointer"
-                >
-                  {lang.label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
+          {/* Dil seçimi (yalnız desktopda görünür) */}
+          <div className="hidden md:block">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="w-12 font-semibold">
+                  {languages.find((lang) => lang.code === locale)?.label}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className="cursor-pointer"
+                  >
+                    {lang.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          
           <Button
             variant="default"
-            className="bg-[#3674B5] text-white flex items-center space-x-1"
+            className="bg-[#3674B5] text-white flex items-center space-x-1 hover:bg-[#3674B5]/90"
           >
             <span>{t("contactButton")}</span>
             <GoArrowUpRight />

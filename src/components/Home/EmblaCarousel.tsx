@@ -19,7 +19,7 @@ const LogoCarusel = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="w-full   py-12 overflow-hidden">
+    <div className="w-full   py-8 md:py-9 overflow-hidden">
       <div className="relative">
         <div className="flex animate-scroll whitespace-nowrap">
           {duplicatedLogos.map((logo, index) => (

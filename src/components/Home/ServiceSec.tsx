@@ -5,7 +5,7 @@ import ServiceCard from '../shared/ServiceCard';
 
 export function ServiceSec() {
   return (
-    <section className="py-10 md:py-20 bg-white">
+    <section className="py-8 md:py-18 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 lg:gap-20">
 

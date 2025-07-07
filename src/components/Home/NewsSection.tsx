@@ -35,7 +35,7 @@ export function NewsSection() {
   ];
 
   return (
-    <section className="container mx-auto py-8 px-4">
+    <section className="container mx-auto py-8 md:py-18 px-4">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         <h2 className="text-2xl sm:text-[32px] font-medium mb-4 sm:mb-0">Xəbər və yeniliklər</h2>
         {/* "Daha çoxuna bax" link for desktop, hidden on mobile */}

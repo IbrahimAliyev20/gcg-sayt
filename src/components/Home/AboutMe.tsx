@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export function AboutMe() {
   return (
-    <section className="bg-white py-12 sm:py-20">
+    <section className="bg-white py-8 md:py-18">
       <div className="container mx-auto px-4">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20">
