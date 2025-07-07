@@ -38,7 +38,7 @@ export function Navbar() {
   const navLinks = [
     { href: "/", translationKey: "home" },
     { href: "/about", translationKey: "about" },
-    { href: "/services", translationKey: "services" },
+    { href: "/service", translationKey: "services" },
     { href: "#", translationKey: "news" },
     { href: "/contact", translationKey: "contact" },
   ];
@@ -46,9 +46,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60 h-[61px] flex items-center">
       <div className="container mx-auto px-4 flex items-center justify-between w-full">
-        {/* SOL TƏRƏF: Mobil menyu və Loqo */}
         <div className="flex items-center">
-          {/* Mobil Menyu (yalnız mobildə görünür) */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -95,7 +93,7 @@ export function Navbar() {
             </Sheet>
           </div>
           {/* Loqo (həmişə görünür) */}
-          <div className="text-2xl font-bold">GCG</div>
+          <Link href="/" className="text-2xl font-bold">GCG</Link>
         </div>
 
         {/* ORTA HİSSƏ: Desktop naviqasiyası */}

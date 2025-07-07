@@ -9,8 +9,8 @@ export default function AboutUsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <p className="text-[#3328BF] text-sm font-medium mb-2">Haqqımızda</p>
-          <h1 className="text-4xl font-medium text-foreground mb-8">Bizi Tanıyın</h1>
-          <p className="text-muted-foreground text-base font-normal mb-6 leading-relaxed">
+          <h1 className="text-[22px] sm:text-[32px] font-medium text-foreground mb-8">Bizi Tanıyın</h1>
+          <p className="text-muted-foreground text-sm md:text-base font-normal mb-6 leading-relaxed">
             In the context of business, value refers to the benefits or advantages a product,
             service, or proposition offers to customers or stakeholders. It s about meeting the
             needs, solving the problems, or fulfilling the desires of customers in a way that

@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-pagination-custom .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #d1d5db; 
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+  background-color: #111827; 
+}

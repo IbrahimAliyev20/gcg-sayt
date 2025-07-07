@@ -12,7 +12,7 @@ export function AboutMe() {
           <div className="flex flex-col h-full justify-between">
             <div>
               <p className="font-medium text-sm text-blue-600">Biz kimik ?</p>
-              <h2 className="text-2xl sm:text-[32px] font-medium text-slate-800 mt-2">
+              <h2 className="text-[22px] sm:text-[32px] font-medium text-slate-800 mt-2">
                 Dəyərlərimiz və məqsədimiz
               </h2>
             </div>

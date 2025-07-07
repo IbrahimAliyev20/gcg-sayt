@@ -27,7 +27,7 @@ export function HeroSection() {
         <div className="flex flex-col h-full justify-between gap-10 md:gap-20">
 
           <div className="pt-0 md:pt-10">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold max-w-3xl leading-tight">
+            <h1 className="text-[22px] md:text-[32px] sm:text-4xl md:text-5xl font-semibold max-w-3xl leading-tight">
               Biz müştərilərlə birgə dəniz sənayesini inkişaf etdirməyə davam edəcəyik.
             </h1>
           </div>

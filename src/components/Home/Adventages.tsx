@@ -29,10 +29,10 @@ const AdventagesSec = () => {
               <p className="text-blue-600 font-normal text-sm ">
                 Üstünlüklərimiz
               </p>
-              <h2 className="text-[32px] font-medium text-gray-900 leading-tight">
+              <h2 className="text-[22px] md:text-[32px] font-medium text-gray-900 leading-tight">
                 Bizim dənizdəki yolumuz
               </h2>
-              <p className="text-gray-600 text-base  leading-relaxed">
+              <p className="text-gray-600 text-[12px] md:text-base  leading-relaxed">
                 Courage is another essential element in transforming dreams into
                 reality. It&apos;s about having the courage to pursue your dreams despite
                 fear, doubt.
@@ -45,7 +45,7 @@ const AdventagesSec = () => {
                   <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" />
                   </div>
-                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                  <p className="text-gray-700 text-[12px] md:text-base sm:text-lg leading-relaxed">
                     {feature.text}
                   </p>
                 </div>
