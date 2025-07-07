@@ -1,11 +1,10 @@
-"use client"; // Hook istifadəsi üçün
+"use client"; 
 
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/navigation'; // Navbar-dakı kimi
+import { usePathname } from 'next/navigation'; 
+import Link from 'next/link';
 
-// Sosial media linkləri olduğu kimi qalır
 const socialLinks = [
   { name: 'Facebook', icon: <Facebook size={20} />, url: '#' },
   { name: 'Twitter', icon: <Twitter size={20} />, url: '#' },
@@ -13,17 +12,15 @@ const socialLinks = [
   { name: 'Instagram', icon: <Instagram size={20} />, url: '#' },
 ];
 
-// Naviqasiya linklərini tərcümə açarları ilə əvəz edirik
 const navLinkData = [
-  { href: '/', key: 'home' },
-  { href: '/about', key: 'about' },
-  { href: '/services', key: 'services' },
-  { href: '/news', key: 'news' },
-  { href: '/contact', key: 'contact' },
+  { href: '/', label: 'Ana Səhifə' },
+  { href: '/about', label: 'Haqqımızda' },
+  { href: '/service', label: 'Xidmətlər' },
+  { href: '/team', label: 'Komanda' },
+  { href: '/contact', label: 'Əlaqə' },
 ];
 
 export function Footer() {
-  const t = useTranslations('Footer');
   const pathname = usePathname(); 
   const currentYear = new Date().getFullYear();
 
@@ -34,7 +31,7 @@ export function Footer() {
 
           <div className="flex items-center space-x-6">
             {socialLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
                 href={link.url} 
                 aria-label={link.name}
@@ -43,7 +40,7 @@ export function Footer() {
                 rel="noopener noreferrer"
               >
                 {link.icon}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -52,7 +49,7 @@ export function Footer() {
               {navLinkData.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <li key={link.key}>
+                  <li key={link.href}>
                     <Link 
                       href={link.href} 
                       className={`
@@ -60,7 +57,7 @@ export function Footer() {
                         hover:text-blue-600 transition-colors
                       `}
                     >
-                      {t(link.key)}
+                      {link.label}
                     </Link>
                   </li>
                 );
@@ -69,7 +66,7 @@ export function Footer() {
           </nav>
 
           <div className="text-center text-xs text-gray-500">
-            <p>{t('copyright', { year: currentYear })}</p>
+            <p>&copy; {currentYear} GCG. Bütün hüquqlar qorunur.</p>
           </div>
 
         </div>
