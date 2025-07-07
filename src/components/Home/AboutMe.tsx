@@ -16,7 +16,7 @@ export function AboutMe() {
               </h2>
             </div>
             <div className="hidden lg:block pt-6">
-              <Button variant="default" className="bg-[#3674B5] text-white font-semibold py-3 px-7 rounded-lg hover:bg-[#3673b5] transition-colors duration-300">
+              <Button variant="default" className="bg-[#3674B5] text-white font-semibold py-3 px-7 rounded-lg hover:bg-[#3673b5] transition-colors duration-300 cursor-pointer">
                 Daha çox məlumat al
               </Button>
             </div>

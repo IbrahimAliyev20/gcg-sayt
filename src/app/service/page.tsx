@@ -38,7 +38,7 @@ export default function SectionPage() {
         <div className="text-center mt-12">
           <button
             onClick={handleLoadMore}
-            className="text-sky-600 font-semibold hover:underline px-4 py-2"
+            className="text-sky-600 font-semibold hover:underline px-4 py-2 cursor-pointer"
           >
             Daha çoxuna bax
           </button>

@@ -73,7 +73,7 @@ export function Navbar() {
           <Link href="/contact">
             <Button
               variant="default"
-              className="bg-[#3674B5] text-white flex items-center space-x-1 hover:bg-[#3674B5]/90"
+              className="bg-[#3674B5] text-white flex items-center space-x-1 hover:bg-[#3674B5]/90 cursor-pointer"
             >
               <span>Əlaqəyə Keç</span>
               <GoArrowUpRight />
