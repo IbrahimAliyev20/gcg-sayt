@@ -66,7 +66,8 @@ export function Footer() {
           </nav>
 
           <div className="text-center text-xs text-gray-500">
-            <p>&copy; {currentYear} GCG. Bütün hüquqlar qorunur.</p>
+            <p>&copy; {currentYear} Bütün hüquqlar qorunur.</p>
+            <span>Tərtibatçı <Link href="https://markup.az/" target='_blank' className='text-blue-600 hover:underline'>MarkUp Agency</Link></span>
           </div>
 
         </div>

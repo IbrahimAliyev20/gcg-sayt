@@ -1,9 +1,11 @@
-import { AboutMe } from '@/components/Home/AboutMe'
-import AdventagesSec from '@/components/Home/Adventages'
-// import LogoCarusel from '@/components/Home/EmblaCarousel'
-import { HeroSection } from '@/components/Home/HeroSec'
-// import { NewsSection } from '@/components/Home/NewsSection'
-import { ServiceSec } from '@/components/Home/ServiceSec'
+import AboutPage from '@/components/about/AboutPage'
+import { AboutMe } from '@/components/home/AboutMe'
+import AdventagesSec from '@/components/home/AdventagesSec'
+import { HeroSection } from '@/components/home/HeroSec'
+import MissionPage from '@/components/home/MissionSec'
+import { TeamSec } from '@/components/home/TeamSec'
+import { ServiceSec } from '@/components/home/ServiceSec'
+import { ValuesSec } from '@/components/home/ValuesSec'
 import React from 'react'
 
 
@@ -13,22 +15,27 @@ export default  function HomePage() {
       <div>
       <HeroSection />
       </div>
+      <div className='container mx-auto px-4 py-16 '>
+      <AboutPage />
+      </div>
+      <div className='container mx-auto px-4 '>
+      <MissionPage />
+      </div>
+      <div className='container mx-auto px-4  '>
+      <ValuesSec />
+      </div>
+      <div className='container mx-auto px-4  '>
+      <TeamSec />
+      </div>
       <div className='container mx-auto px-4 '>
       <ServiceSec />
       </div>
       <div className='container mx-auto px-4 '>
       <AboutMe />
       </div>
-      {/* <div className='container mx-auto px-4 '>
-      <LogoCarusel />
-      </div> */}
       <div className='container mx-auto px-4 '>
       <AdventagesSec />
       </div>
-      {/* <div className='container mx-auto px-4 '>
-      <NewsSection />
-      </div> */}
-
     </div>
   )
 }

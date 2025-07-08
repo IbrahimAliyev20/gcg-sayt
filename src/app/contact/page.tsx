@@ -165,7 +165,7 @@ export default function ContactPage() {
                 variant="default"
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#3674B5] text-white "
+                className="w-full bg-[#3674B5] text-white cursor-pointer"
               >
                 {isSubmitting ? "Göndərilir..." : "Mesajınızı göndərin"}
                 <ArrowUpRight className="ml-2 h-4 w-4" />
