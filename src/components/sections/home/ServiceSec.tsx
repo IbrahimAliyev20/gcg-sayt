@@ -6,8 +6,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { servicesData } from "@/lib/data/servicesData";
-import ServiceCard from "../shared/ServiceCard";
-import { HiArrowRight } from "react-icons/hi"; // react-icons-dan ox ikonu
+import { HiArrowRight } from "react-icons/hi"; 
+import ServiceCard from "@/components/shared/ServiceCard";
 
 export function ServiceSec() {
   // Yalnız ilk 4 xidməti göstərmək üçün
