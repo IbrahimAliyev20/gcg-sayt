@@ -1,6 +1,6 @@
-import AboutPage from '@/components/About/AboutPage';
-import { AboutMe } from '@/components/Home/AboutMe';
-import AdventagesSec from '@/components/Home/AdventagesSec';
+import AboutPage from '@/components/sections/about/AboutPage';
+import { AboutMe } from '@/components/sections/home/AboutMe';
+import AdventagesSec from '@/components/sections/home/AdventagesSec';
 import React from 'react';
 
 export default function AboutUsPage() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { TeamCard } from '../shared/Team-card';
 import { ArrowUpRight } from 'lucide-react';
+import { TeamCard } from '@/components/shared/Team-card';
 
 export function TeamSec() {
   const TeamItems = [
