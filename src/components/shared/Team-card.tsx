@@ -20,7 +20,7 @@ export function TeamCard({ imageSrc,   name, description }: NewsCardProps) {
       <div className="py-4">
         
         <h3 className="text-base font-medium mb-2 line-clamp-1">{name}</h3>
-        <p className="text-muted-foreground text-[12px] font-normal mb-4 line-clamp-2">{description}</p>
+        <p className="text-muted-foreground text-[12px] font-normal mb-2 md:mb-4 line-clamp-2">{description}</p>
         
       </div>
     </div>

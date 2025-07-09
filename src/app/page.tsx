@@ -1,4 +1,5 @@
 import AboutPage from '@/components/sections/about/AboutPage'
+import ContactPage from '@/components/sections/contact/ContactPage'
 import { AboutMe } from '@/components/sections/home/AboutMe'
 import AdventagesSec from '@/components/sections/home/AdventagesSec'
 import { HeroSection } from '@/components/sections/home/HeroSec'
@@ -15,7 +16,7 @@ export default  function HomePage() {
       <div>
       <HeroSection />
       </div>
-      <div className='container mx-auto px-4 py-16 '>
+      <div className='container mx-auto px-4 py-8 md:py-16 '>
       <AboutPage />
       </div>
       <div className='container mx-auto px-4 '>
@@ -30,12 +31,11 @@ export default  function HomePage() {
       <div className='container mx-auto px-4 '>
       <ServiceSec />
       </div>
+     
       <div className='container mx-auto px-4 '>
-      <AboutMe />
+      <ContactPage />
       </div>
-      <div className='container mx-auto px-4 '>
-      <AdventagesSec />
-      </div>
+    
     </div>
   )
 }

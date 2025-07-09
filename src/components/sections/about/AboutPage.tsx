@@ -25,18 +25,18 @@ function AboutPage() {
 
         <div className="relative w-full min-h-[250px] lg:min-h-[500px]">
           <Image
-            src="/images/abouthero1.jpeg"
+            src="/images/abouthm1.jpg"
             alt="Boat on water"
             width={400}
             height={280}
-            className="absolute top-0 right-0 object-cover rounded-4xl w-[236px] h-[166px] md:w-[400px] md:h-[280px] "
+            className="absolute top-0 right-0 object-cover rounded-3xl w-[236px] h-[166px] md:w-[400px] md:h-[280px] "
           />
           <Image
-            src="/images/abouthero2.jpeg"
+            src="/images/abouthm2.jpg"
             alt="Boats in a cove"
             width={380}
             height={280}
-            className="w-[200px] h-[142px]  md:w-[380px] md:h-[280px] absolute bottom-5 left-0 object-cover rounded-4xl z-10 border-12 border-white"
+            className="w-[220px] h-[152px]  md:w-[380px] md:h-[280px] absolute bottom-5 left-0 object-cover rounded-3xl z-10 border-12 border-white"
           />
         </div>
       </div>

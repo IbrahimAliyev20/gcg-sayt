@@ -1,49 +1,51 @@
-"use client";
-
-import React, { useState } from "react";
+import Image from "next/image"; 
 import ServiceCard from "@/components/shared/ServiceCard";
 import { servicesData } from "@/lib/data/servicesData";
+import Link from "next/link";
 
 export default function SectionPage() {
-  const [visibleCount, setVisibleCount] = useState(6);
-
-  const handleLoadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4);
-  };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="mb-12 w-full md:w-[600px]">
-        <h2 className="text-[#3328BF] text-[14px] font-medium mb-2">
-          Xidmətlərimiz
-        </h2>
-        <h1 className="text-[20px] md:text-[32px] font-medium text-foreground leading-tight">
-          Dəniz davamlılığını simulyasiya ilə dəstəkləyirik.
-        </h1>
-      </div>
+    <div>
+      <div className="relative w-full h-[350px] md:h-[400px]  overflow-hidden mb-12">
+        <Image
+          src="/images/heroservice.jpg" 
+          alt="Cargo ship for green services"
+          fill
+          priority 
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[#092C3ABD]/90" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
-        {servicesData.slice(0, visibleCount).map((service, index) => (
-          <div key={index} className="bg-card p-6 rounded-lg h-full">
+        <div className="container mx-auto relative z-10 h-full flex items-center px-4">
+          <h1 className="text-[48px] font-semibold text-white">
+            Efficient, Green, Reliable Services
+          </h1>
+        </div>
+      </div>
+    <div className="container mx-auto px-4 py-12">
+    
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {servicesData.map((service, index) => (
+          <Link href='#' target="_blank" rel="noopener noreferrer"  key={index}>
+          <div className="bg-white   h-full hover:bg-[#F7FEFE] cursor-pointer">
+            
             <ServiceCard
+              key={service.title}
               icon={service.icon}
               title={service.title}
-              description={service.description}
+              services={service.services}
             />
           </div>
+            </Link>
+
         ))}
       </div>
 
-      {visibleCount < servicesData.length && (
-        <div className="text-center mt-12">
-          <button
-            onClick={handleLoadMore}
-            className="text-sky-600 font-semibold hover:underline px-4 py-2 cursor-pointer"
-          >
-            Daha çoxuna bax
-          </button>
-        </div>
-      )}
+
+    </div>
+
     </div>
   );
 }
