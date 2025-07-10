@@ -4,11 +4,15 @@ import { HeroSection } from '@/components/sections/home/HeroSec'
 import MissionPage from '@/components/sections/home/MissionSec'
 import { ServiceSec } from '@/components/sections/home/ServiceSec'
 import { TeamSec } from '@/components/sections/home/TeamSec'
-import { ValuesSec } from '@/components/sections/home/ValuesSec'
+import ValuesSec from '@/components/sections/home/ValuesSec'
+import { getContact } from '@/lib/contact'
 import React from 'react'
 
 
-export default  function HomePage() {
+export default async  function HomePage() {
+
+  const contact = await getContact();
+
   return (
     <div >
       <div>
@@ -31,7 +35,7 @@ export default  function HomePage() {
       </div>
      
       <div id='contactpage' className='container mx-auto px-4 '>
-      <ContactPage />
+      <ContactPage contact={contact}/>
       </div>
     
     </div>

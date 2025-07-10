@@ -1,28 +1,9 @@
+import { getOurValue } from '@/lib/our-value';
 import React from 'react';
 
-export function ValuesSec() {
-  const values = [
-    {
-      title: 'Objectivity',
-      description: 'We base our work on facts, evidence, and impartial analysis.',
-    },
-    {
-      title: 'Reliability',
-      description: 'We deliver high-quality services with consistency and professionalism.',
-    },
-    {
-      title: 'Transparency',
-      description: 'We promote openness in our methods, partnerships, and decision-making processes.',
-    },
-    {
-      title: 'Sustainability',
-      description: 'We prioritize long-term impact and resilient solutions in every initiative we lead.',
-    },
-    {
-      title: 'Inclusiveness',
-      description: 'We believe in collaborative approaches that value diversity and shared ownership.',
-    },
-  ];
+export default async function ValuesSec() {
+
+  const values = await getOurValue();
 
   return (
     <section className="flex flex-col md:flex-row py-16 px-4 md:px-8 lg:px-16 bg-background text-foreground">
