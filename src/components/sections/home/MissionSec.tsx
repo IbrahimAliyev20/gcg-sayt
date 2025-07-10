@@ -39,7 +39,7 @@ export default function MissionPage() {
         </div>
         <div className="md:w-1/2 flex justify-center p-0 md:p-4">
           <Image
-            src="/images/ourvision.png"
+            src="/images/ourvision.jpg"
             alt="Large cargo ship with sails"
             width={500}
             height={272}

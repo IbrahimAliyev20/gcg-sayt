@@ -14,13 +14,13 @@ export function HeroSection() {
     <section className="relative w-full text-white  flex items-center ">
       <div className="absolute inset-0 bg-cover bg-center -z-10">
         <Image
-          src="/images/herosec.jpg"
+          src="/images/herosection.jpg"
           alt="hero"
           fill
           className="object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-black/10 -z-10" />
+      <div className="absolute inset-0 bg-[#0C4F4F]/35 -z-10" />
       <div className="container mx-auto px-4 h-full flex flex-col justify-center py-12 md:py-20">
         <div className="flex flex-col h-full justify-between gap-10 md:gap-20">
           <div className="pt-0 md:pt-10">
@@ -30,12 +30,12 @@ export function HeroSection() {
           </div>
           <div className="w-full flex justify-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-center w-full md:w-[80%] ">
-              <StatCard value="22+" label="Tətbiq olunmuş layihələr" />
+              <StatCard value="22+" label="Implemented projects" />
               <StatCard
                 value="12+"
-                label="İllərlə aparılan tədqiqat və inkişaf işi"
+                label="Years of research and development"
               />
-              <StatCard value="1000+" label="Məmnun müştəri sayı" />
+              <StatCard value="1000+" label="Number of satisfied customers" />
             </div>
           </div>
         </div>

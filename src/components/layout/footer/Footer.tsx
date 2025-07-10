@@ -13,11 +13,11 @@ const socialLinks = [
 ];
 
 const navLinkData = [
-  { href: '/', label: 'Ana Səhifə' },
-  { href: '/about', label: 'Haqqımızda' },
-  { href: '/service', label: 'Xidmətlər' },
-  { href: '/team', label: 'Komanda' },
-  { href: '/contact', label: 'Əlaqə' },
+  { href: '/', label: 'Home' },
+  { href: '/#aboutpage', label: 'About us' },
+  { href: '/service', label: 'Service' },
+  { href: '/#teampage', label: 'Team' },
+  { href: '/#contactpage', label: 'Contact us' },
 ];
 
 export function Footer() {
@@ -46,10 +46,10 @@ export function Footer() {
 
           <nav>
             <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium">
-              {navLinkData.map((link) => {
+              {navLinkData.map((link, index) => {
                 const isActive = pathname === link.href;
                 return (
-                  <li key={link.href}>
+                  <li key={index}>
                     <Link 
                       href={link.href} 
                       className={`

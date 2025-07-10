@@ -18,20 +18,18 @@ export function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: "/", label: "Ana Səhifə" },
-    { href: "/about", label: "Haqqımızda" },
-    { href: "/service", label: "Xidmətlər" },
-    { href: "/team", label: "Komanda" },
-    { href: "/contact", label: "Əlaqə" },
+    { href: "/", label: "Home" },
+    { href: "/#aboutpage", label: "About us" },
+    { href: "/service", label: "Service" },
+    { href: "/#teampage", label: "Team" },
+    { href: "/#contactpage", label: "Contact us" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60 h-[81px] flex items-center">
       <div className="container mx-auto px-4 flex items-center justify-between w-full">
         <div className="flex items-center">
-          {/* --- Mobil Menyu --- */}
     
-          {/* --- Logo --- */}
           <Link href="/" className="text-2xl font-bold ">
             <Image
               src="/images/logo.png"
@@ -43,7 +41,6 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* --- Desktop Navigasiya (DÜZƏLDİLMİŞ HİSSƏ) --- */}
         <div className="hidden md:flex items-center">
           <ul className="flex space-x-8">
             {navLinks.map((link) => {
@@ -66,9 +63,8 @@ export function Navbar() {
           </ul>
         </div>
 
-        {/* --- Əlaqə Düyməsi --- */}
         <div className="flex items-center space-x-2">
-          <Link href="/contact">
+          <Link href="#contactpage">
             <Button
               variant="default"
               className="bg-[#53B8B8] text-white flex items-center space-x-1 hover:bg-[#3674B5]/90 cursor-pointer"

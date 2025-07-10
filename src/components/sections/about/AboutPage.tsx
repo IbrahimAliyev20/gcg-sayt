@@ -23,20 +23,13 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className="relative w-full min-h-[250px] lg:min-h-[500px]">
+        <div className="relative w-full ">
           <Image
-            src="/images/abouthm1.jpg"
-            alt="Boat on water"
-            width={400}
-            height={280}
-            className="absolute top-0 right-0 object-cover rounded-3xl w-[236px] h-[166px] md:w-[400px] md:h-[280px] "
-          />
-          <Image
-            src="/images/abouthm2.jpg"
-            alt="Boats in a cove"
-            width={380}
-            height={280}
-            className="w-[220px] h-[152px]  md:w-[380px] md:h-[280px] absolute bottom-5 left-0 object-cover rounded-3xl z-10 border-12 border-white"
+            src="/images/aboutus.jpg"
+            alt="Ship with green shipping sails"
+            width={527}
+            height={272}
+            className="rounded-lg shadow-lg object-cover w-full h-full"
           />
         </div>
       </div>

@@ -1,54 +1,27 @@
-import React from 'react';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
-import { TeamCard } from '@/components/shared/Team-card';
+import React from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function TeamSec() {
-  const TeamItems = [
-    {
-      imageSrc: "/images/team1.jpg",
-      name: 'Jane Black',
-      description: 'Embark on a journey to discover the allure and beauty of high altitude...',
-    },
-    {
-      imageSrc: "/images/team2.jpg",
-      name: 'Ebulfaz Sadigov ',
-      description: 'Embark on a journey to discover the allure and beauty of high altitude...',
-    },
-    {
-      imageSrc: "/images/team1.jpg",
-      name: 'Jane Black',
-      description: 'Embark on a journey to discover the allure and beauty of high altitude...',
-    },
-    {
-      imageSrc: "/images/team2.jpg",
-      name: 'Jane Black',
-      description: 'Embark on a journey to discover the allure and beauty of high altitude...',
-    },
-  ];
-
   return (
     <section className="container mx-auto py-8 md:py-18 px-4">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
+      <div className="flex flex-col  gap-4 md:gap-12">
         <div>
-        <span className='text-[#1C746F] text-sm font-medium'>Our Team</span>
-        <h2 className="text-[22px] sm:text-[32px] font-medium mb-4 sm:mb-0">Together, we build better.</h2>
+          <span className="text-[#1C746F] text-sm font-medium">Our Team</span>
+          <h2 className="text-[22px] sm:text-[32px] font-medium mb-4 sm:mb-0">
+            Together, we build better.
+          </h2>
         </div>
-        <Link href="#" className="hidden sm:flex text-[#3674B5] items-center gap-1">
-          See More <ArrowUpRight />
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-6">
-        {TeamItems.map((item, index) => (
-          <TeamCard key={index} {...item} />
-        ))}
-      </div>
-      
-      <div className="flex justify-end mt-8 sm:hidden">
-        <Link href="#" className="text-[#53B8B8] flex items-center gap-1">
-          See More
-          <ArrowUpRight />
-        </Link>
+        <p>
+          Caspian Green Galleon (GCG) is a multidisciplinary team committed to
+          supporting the green transition across the Caspian Sea region through
+          research, consulting, and innovative initiatives. Our experts bring
+          extensive experience in energy transition, environmental
+          sustainability, and the application of green technologies. With a
+          strong background in both local and international contexts, our
+          mission is to contribute to ecological and economic transformation in
+          the Caspian basin through evidence-based strategies.
+        </p>
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 interface IFormData {
   name: string;
   email: string;
+  phone: string; // Telefon nömrəsi üçün əlavə edildi
   message: string;
 }
 
@@ -23,37 +24,33 @@ export default function ContactPage() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "", // Telefon nömrəsi üçün əlavə edildi
       message: "",
     },
   });
 
   function onSubmit(values: IFormData) {
     console.log("Form məlumatları:", values);
-
     reset();
-
     alert("Mesajınız uğurla göndərildi!");
   }
 
   return (
     <div className="container mx-auto px-2 py-[40px]">
-        <div>
-          <span className="text-[#1C746F] text-sm font-medium">Contact Us</span>
-          <h2 className="text-3xl font-medium mb-4">
-            Get in Touch
-          </h2>
-        </div>
-      <div className=" bg-[#f5fbfd] mx-auto px-2 md:px-[36px]  rounded-lg">
-      
+      <div>
+        <span className="text-[#1C746F] text-sm font-medium">Contact Us</span>
+        <h2 className="text-3xl font-medium mb-4">Get in Touch</h2>
+      </div>
+      <div className=" bg-[#f5fbfd] mx-auto px-2 md:p-[36px]  rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <div className="bg-card p-6 rounded-lg flex items-center space-x-4">
             <div className="p-3 rounded-full text-muted-foreground">
               <Phone className="w-8 h-8" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Əlaqə telefon</p>
+              <p className="text-sm text-muted-foreground">Phone number</p>
               <p className="text-lg font-semibold text-foreground">
-                +994 70 700 70 70
+                +994 10 555 10 44
               </p>
             </div>
           </div>
@@ -65,7 +62,7 @@ export default function ContactPage() {
             <div>
               <p className="text-sm text-muted-foreground">Email</p>
               <p className="text-lg font-semibold text-foreground">
-                greencaspian@gmail.com
+                info@greencaspian.global
               </p>
             </div>
           </div>
@@ -75,9 +72,9 @@ export default function ContactPage() {
               <MapPin className="w-8 h-8" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Ünvan</p>
+              <p className="text-sm text-muted-foreground">Adress</p>
               <p className="text-lg font-semibold text-foreground">
-                Lorem ipsum dolor sit amet
+               Dalga Plaza, 24 Neftchilar Ave., Baku, AZ 1000
               </p>
             </div>
           </div>
@@ -85,7 +82,7 @@ export default function ContactPage() {
 
         <div className="bg-card p-6 md:p-8 rounded-lg">
           <h2 className="text-[20px] md:text-[32px] font-medium text-foreground mb-8">
-            Bizimlə Əlaqə Saxlayın
+            We Are Just a Message Away
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-20">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -94,11 +91,11 @@ export default function ContactPage() {
                   htmlFor="name"
                   className="block text-sm font-medium text-muted-foreground mb-2"
                 >
-                  Ad, soyad
+                  Full name
                 </label>
                 <Input
                   id="name"
-                  placeholder="Ad və soyadınızı daxil edin"
+                  placeholder="Enter your full name"
                   {...register("name", {
                     required: "Ad və soyad mütləqdir.",
                     minLength: {
@@ -124,12 +121,13 @@ export default function ContactPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Email adresinizi daxil edin"
+                  placeholder="Enter your email"
                   {...register("email", {
                     required: "Email ünvanı mütləqdir.",
                     pattern: {
                       value: /^\S+@\S+\.\S+$/,
-                      message: "Zəhmət olmasa, düzgün email ünvanı daxil edin.",
+                      message:
+                        "Zəhmət olmasa, düzgün email ünvanı daxil edin.",
                     },
                   })}
                 />
@@ -140,16 +138,45 @@ export default function ContactPage() {
                 )}
               </div>
 
+              {/* YENİ ƏLAVƏ EDİLMİŞ TELEFON NÖMRƏSİ XANASI */}
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-muted-foreground mb-2"
+                >
+                  Phone Number
+                </label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  {...register("phone", {
+                    required: "Telefon nömrəsi mütləqdir.",
+                    pattern: {
+                      value: /^\+?[0-9\s-()]{7,}$/,
+                      message:
+                        "Zəhmət olmasa, düzgün telefon nömrəsi daxil edin.",
+                    },
+                  })}
+                />
+                {errors.phone && (
+                  <p className="text-sm text-red-500 mt-1">
+                    {errors.phone.message}
+                  </p>
+                )}
+              </div>
+              {/* YENİ XANANIN SONU */}
+
               <div>
                 <label
                   htmlFor="message"
                   className="block text-sm font-medium text-muted-foreground mb-2"
                 >
-                  Mesajınız
+                  Message
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Mesajınızı daxil edin"
+                  placeholder="Enter your message"
                   rows={5}
                   className="resize-none h-30"
                   {...register("message", {
@@ -172,9 +199,9 @@ export default function ContactPage() {
                 variant="default"
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#3674B5] text-white cursor-pointer"
+                className="w-full bg-[#53B8B8] py-6 text-white cursor-pointer"
               >
-                {isSubmitting ? "Göndərilir..." : "Mesajınızı göndərin"}
+                {isSubmitting ? "Sending..." : "Send a message"}
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
             </form>
