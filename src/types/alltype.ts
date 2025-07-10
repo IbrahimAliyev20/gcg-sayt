@@ -73,3 +73,9 @@ export interface ContactType {
   address: string;
   map: string;
 }
+export interface SocialMediaType {
+  name: string;
+  link: string;
+  image: string;
+  thumb_image: string;
+} 
