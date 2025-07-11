@@ -3,6 +3,32 @@ import Image from "next/image";
 import ServiceCard from "@/components/shared/ServiceCard";
 import { getOurServices } from "@/lib/our-service";
 import { getHero } from "@/lib/hero";
+import { MetaTagsType } from "@/types/alltype";
+import { getMetaTags } from "@/lib/metatags";
+
+
+export async function generateMetadata() {
+  const metaData: MetaTagsType[] = await getMetaTags();
+
+  const defaultMeta = metaData.find((meta) => meta.title.toLowerCase() === 'Service') || {
+    meta_title: 'Service meta title',
+    meta_description: 'Service meta desc',
+    meta_keyword: 'Service meta keyword',
+    
+  };
+  
+  return {
+    title: defaultMeta.meta_title,
+    description: defaultMeta.meta_description,
+    keywords: defaultMeta.meta_keyword,
+    openGraph: {
+      title: defaultMeta.meta_title,
+      description: defaultMeta.meta_description,
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      type: 'website',
+    },
+  };
+}
 
 export default async function ServicesPage() {
   const [servicesResponse, heroDataArr] = await Promise.all([

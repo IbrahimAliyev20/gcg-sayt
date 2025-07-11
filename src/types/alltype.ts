@@ -79,3 +79,34 @@ export interface SocialMediaType {
   image: string;
   thumb_image: string;
 } 
+
+export interface SettingType {
+  header_logo: string;
+}
+
+
+export interface ContactFormPayload {
+  name: string;
+  email: string;
+  phone: string;
+  note: string;
+}
+
+export interface ContactFormResponse {
+  status: boolean;
+  message: string;
+  lang: string;
+  data: {
+    name: string;
+    phone: string;
+    email: string;
+    note: string;
+  };
+}
+
+export  interface MetaTagsType {
+  title: string ;
+  meta_title: string;
+  meta_description: string;
+  meta_keyword: string;
+}
