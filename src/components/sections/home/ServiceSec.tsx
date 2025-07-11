@@ -51,6 +51,7 @@ export async function ServiceSec() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {featuredServices.map((service, index) => (
                     <ServiceCard
+                      image={service.image}
                       key={index}
                       title={service.title}
                       description={service.description}

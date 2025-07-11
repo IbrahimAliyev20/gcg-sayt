@@ -62,6 +62,7 @@ export default async function ServicesPage() {
           {allServices.map((service, index) => (
            
               <ServiceCard
+                image={service.image}
                 key={index}
                 title={service.title}
                 description={service.description}

@@ -31,7 +31,7 @@ export function FooterMain({ socialLinks }: { socialLinks: SocialMediaType[] }) 
                 key={link.name} 
                 href={link.link} 
                 aria-label={link.name}
-                className="text-gray-500 hover:text-blue-600 transition-colors"
+                className="text-gray-500 hover:text-[#53B8B8] transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -49,8 +49,8 @@ export function FooterMain({ socialLinks }: { socialLinks: SocialMediaType[] }) 
                     <Link 
                       href={link.href} 
                       className={`
-                        ${isActive ? 'text-blue-600' : 'text-gray-600'}
-                        hover:text-blue-600 transition-colors
+                        ${isActive ? 'text-gray-600' : 'text-gray-600'}
+                        hover:text-[#53B8B8] transition-colors
                       `}
                     >
                       {link.label}
@@ -62,8 +62,8 @@ export function FooterMain({ socialLinks }: { socialLinks: SocialMediaType[] }) 
           </nav>
 
           <div className="text-center text-xs text-gray-500">
-            <p>&copy; {currentYear} Bütün hüquqlar qorunur.</p>
-            <span>Tərtibatçı <Link href="https://markup.az/" target='_blank' className='text-blue-600 hover:underline'>MarkUp Agency</Link></span>
+            <p>Copyright  &copy; {currentYear} by <span>Tərtibatçı <Link href="https://markup.az/" target='_blank' className='text-blue-600 hover:underline'>MarkUp Agency</Link></span>. All rights reserved.</p>
+            
           </div>
 
         </div>

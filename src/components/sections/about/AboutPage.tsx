@@ -11,7 +11,7 @@ export default async function AboutPage() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <p className="text-[#3328BF] text-sm font-medium mb-2">About us</p>
+        <p className="text-[#1C746F] text-sm font-medium mb-2">About us</p>
         <h1 className="text-[22px] sm:text-[32px] font-medium text-foreground mb-8">
           {data.title}
         </h1>

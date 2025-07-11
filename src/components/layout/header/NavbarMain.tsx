@@ -21,8 +21,8 @@ export function NavbarMain({ logo }: { logo: SettingType }) {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/#aboutpage", label: "About us" },
-    { href: "/service", label: "Service" },
     { href: "/#teampage", label: "Team" },
+    { href: "/service", label: "Services" },
     { href: "/#contactpage", label: "Contact us" },
   ];
 

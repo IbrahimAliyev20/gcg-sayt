@@ -1,9 +1,8 @@
-
 "use client";
 
 import React, { useState } from "react"; 
 import { useForm } from "react-hook-form";
-import {  ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -18,7 +17,6 @@ interface IFormData {
 }
 
 export default function ContactPage({ contact }: { contact: ContactType }) {
-  // Uğurlu və ya xətalı cavabları göstərmək üçün state
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | '' }>({ message: '', type: '' });
 
   const {
@@ -47,19 +45,53 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
       } else {
         setFormStatus({ message: response.message || 'Xəta baş verdi.', type: 'error' });
       }
-    } catch (error: unknown) {
-  if (error instanceof Error) {
-    setFormStatus({ message: error.message || 'Server xətası. Zəhmət olmasa, bir az sonra yenidən cəhd edin.', type: 'error' });
-  } else {
-    setFormStatus({ message: 'An unknown error occurred.', type: 'error' });
-  }
-}
+
+    } catch (error) {
+      let errorMessage = 'Naməlum server xətası baş verdi.';
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      setFormStatus({ message: errorMessage, type: 'error' });
+    }
   }
 
   const safeContact = contact || { phone: '', email: '', address: '', map_url: '' };
 
   return (
     <div className="container mx-auto px-2 py-16">
+      {/* ===== DÜZƏLİŞ: İtmiş hissələr bura əlavə edildi ===== */}
+      <div>
+        <span className="text-[#1C746F] text-sm font-medium">Contact Us</span>
+        <h2 className="text-3xl font-medium mb-10">Get in Touch</h2>
+      </div>
+      <div className="bg-[#f5fbfd] mx-auto p-4 md:p-8 rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          
+          <div className="bg-card p-6 rounded-lg flex items-center space-x-4">
+            <div className="p-3 rounded-full text-muted-foreground"><Phone className="w-8 h-8" /></div>
+            <div>
+              <p className="text-sm text-muted-foreground">Phone number</p>
+              <p className="text-lg font-semibold text-foreground">{safeContact.phone}</p>
+            </div>
+          </div>
+
+          <div className="bg-card p-6 rounded-lg flex items-center space-x-4">
+            <div className="p-3 rounded-full text-muted-foreground"><Mail className="w-8 h-8" /></div>
+            <div>
+              <p className="text-sm text-muted-foreground">Email</p>
+              <p className="text-lg font-semibold text-foreground">{safeContact.email}</p>
+            </div>
+          </div>
+
+          <div className="bg-card p-6 rounded-lg flex items-center space-x-4">
+            <div className="p-3 rounded-full text-muted-foreground"><MapPin className="w-8 h-8" /></div>
+            <div>
+              <p className="text-sm text-muted-foreground">Address</p>
+              <p className="text-lg font-semibold text-foreground">{safeContact.address}</p>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-card p-6 md:p-8 rounded-lg">
           <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-8">We Are Just a Message Away</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-20">
@@ -80,11 +112,12 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
                 </p>
               )}
             </form>
-            <div className="relative w-full h-64 lg:h-auto rounded-lg overflow-hidden">
+            <div className="relative  w-full md:w-[90%]  h-[324px] md:h-[86%]  rounded-lg overflow-hidden">
               <iframe src={safeContact.map} width="100%" height="100%" loading="lazy" className="border-0"></iframe>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 }
