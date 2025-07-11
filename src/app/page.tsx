@@ -30,7 +30,7 @@ export default async  function HomePage() {
       <div className='container mx-auto px-4' id='teampage'>
       <TeamSec />
       </div>
-      <div className='container mx-auto px-4 '>
+      <div className='container mx-auto px-4' id="service">
       <ServiceSec />
       </div>
      

@@ -22,7 +22,7 @@ export function NavbarMain({ logo }: { logo: SettingType }) {
     { href: "/", label: "Home" },
     { href: "/#aboutpage", label: "About us" },
     { href: "/#teampage", label: "Team" },
-    { href: "/service", label: "Services" },
+    { href: "/#service", label: "Services" },
     { href: "/#contactpage", label: "Contact us" },
   ];
 
