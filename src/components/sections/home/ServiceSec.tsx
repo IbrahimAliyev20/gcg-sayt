@@ -17,9 +17,9 @@ export async function ServiceSec() {
   const serviceHero = heroDataArr.find(h => h.name === 'Service');
 
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
+    <section className="py-8 md:py-20 bg-white">
+      <div >
+        <div className="flex flex-col md:flex-row gap-6 lg:gap-8">
           {/* Sol Tərəf */}
           <div className="flex flex-col justify-between md:w-[474px]">
             <div>
@@ -48,13 +48,14 @@ export async function ServiceSec() {
           </div>
 
           <div className="w-full md:flex-1 flex flex-col justify-between">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
               {featuredServices.map((service, index) => (
                     <ServiceCard
                       image={service.image}
                       key={index}
                       title={service.title}
                       description={service.description}
+                      
                     />
               ))}
             </div>

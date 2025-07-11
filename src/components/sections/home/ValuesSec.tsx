@@ -6,7 +6,7 @@ export default async function ValuesSec() {
   const values = await getOurValue();
 
   return (
-    <section className="flex flex-col md:flex-row py-16 px-4 md:px-8 lg:px-16 bg-background text-foreground">
+    <section className="flex flex-col md:flex-row py-16  bg-background text-foreground">
       <div className="w-full md:w-1/3 pr-0 md:pr-16 mb-8 md:mb-0">
         <p className="text-sm font-medium text-[#1C746F] mb-2">About us</p>
         <h2 className="text-[22px] md:text-4xl font-medium text-foreground">Our Values</h2>

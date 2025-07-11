@@ -12,11 +12,8 @@ import {
 } from "@/components/ui/sheetui"; 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { SettingType } from "@/types/alltype";
 
-export function NavbarMain({ logo }: { logo: SettingType }) {
-  const pathname = usePathname();
+export function NavbarMain() {
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -28,16 +25,16 @@ export function NavbarMain({ logo }: { logo: SettingType }) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-200/60 h-[81px] flex items-center">
-      <div className="container mx-auto px-4 flex items-center justify-between w-full">
+      <div className="max-w-8xl mx-auto px-4 md:px-14  flex items-center justify-between w-full">
         <div className="flex items-center">
     
-          <Link href="/" className="text-2xl font-bold ">
+          <Link href="/">
             <Image
-              src={logo.header_logo}
+              src='/images/logo.svg'
               alt="GCG"
-              width={84}
-              height={81}
-              className="cursor-pointer w-16 h-15 md:w-21 md:h-20"
+              width={67}
+              height={80}
+              className="cursor-pointer w-16 h-15 md:w-[67px] md:h-18"
             />
           </Link>
         </div>
@@ -45,17 +42,11 @@ export function NavbarMain({ logo }: { logo: SettingType }) {
         <div className="hidden md:flex items-center">
           <ul className="flex space-x-8">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
               return (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`font-medium transition-colors ${
-                      isActive
-                        ? "text-[#53B8B8]"
-                        : "text-gray-600 hover:text-[#53B8B8]"
-                    }`}
-                  >
+                    className={`font-medium transition-colors "text-gray-600 hover:text-[#53B8B8]`}>
                     {link.label}
                   </Link>
                 </li>

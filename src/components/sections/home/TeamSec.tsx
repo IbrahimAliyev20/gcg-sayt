@@ -7,7 +7,7 @@ export async function TeamSec() {
   const descriptionHtml = team?.description || "";
 
   return (
-    <section className="container mx-auto py-8 md:py-18 px-4">
+    <section className=" py-8 md:py-18 ">
       <div className="flex flex-col gap-4 md:gap-12">
         <div>
           <span className="text-[#1C746F] text-sm font-medium">Our Team</span>

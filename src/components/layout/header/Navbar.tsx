@@ -1,14 +1,12 @@
 import React from 'react'
 import { NavbarMain } from './NavbarMain'
-import { getSetting } from '@/lib/setting'
 
-export default async function Navbar() {
+export default  function Navbar() {
 
-    const logo = await getSetting()
 
   return (
     <div>
-      <NavbarMain  logo={logo}/>
+      <NavbarMain  />
     </div>
   )
 }

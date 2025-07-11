@@ -50,14 +50,14 @@ export default async function ServicesPage() {
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-[#092C3ABD]/90" />
-        <div className="container mx-auto relative z-10 h-full flex items-center px-4">
+        <div className="max-w-8xl px-4 md:px-14 relative z-10 h-full flex items-center ">
           <h1 className="text-4xl md:text-5xl font-semibold text-white max-w-3xl">
             {serviceHero?.title || "Efficient, Green, Reliable Services"}
           </h1>
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-12">
+      <div className=",ax-w-8xl mx-auto px-10 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allServices.map((service, index) => (
            

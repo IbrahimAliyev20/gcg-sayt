@@ -18,23 +18,23 @@ export default async  function HomePage() {
       <div>
       <HeroSection />
       </div>
-      <div id="aboutpage" className='container mx-auto px-4 py-8 md:py-16 '>
+      <div id="aboutpage" className='max-w-8xl mx-auto px-4 md:px-14 py-8 md:py-16 '>
       <AboutPage />
       </div>
-      <div className='container mx-auto px-4 '>
+      <div className='max-w-8xl mx-auto px-4 md:px-14'>
       <MissionPage />
       </div>
-      <div className='container mx-auto px-4  '>
+      <div className='max-w-8xl mx-auto px-4 md:px-14'>
       <ValuesSec />
       </div>
-      <div className='container mx-auto px-4' id='teampage'>
+      <div className='max-w-8xl mx-auto px-4 md:px-14' id='teampage'>
       <TeamSec />
       </div>
-      <div className='container mx-auto px-4' id="service">
+      <div  id="service" className='max-w-8xl mx-auto px-4 md:px-14'>
       <ServiceSec />
       </div>
      
-      <div id='contactpage' className='container mx-auto px-4 '>
+      <div id='contactpage' className='max-w-8xl mx-auto px-4 md:px-14'>
       <ContactPage contact={contact}/>
       </div>
     

@@ -34,7 +34,7 @@ export async function HeroSection() {
         />
       </div>
       <div className="absolute inset-0 bg-[#0C4F4F]/35 -z-10" />
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center py-12 md:py-20">
+      <div className="max-w-8xl px-4 md:px-14 h-full flex flex-col justify-center py-12 md:py-20">
         <div className="flex flex-col h-full justify-between gap-10 md:gap-20">
           <div className="pt-0 md:pt-10">
             <h1 className="text-[22px] md:text-[32px] sm:text-4xl md:text-5xl font-semibold max-w-3xl leading-tight">

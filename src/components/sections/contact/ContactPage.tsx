@@ -58,13 +58,13 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
   const safeContact = contact || { phone: '', email: '', address: '', map_url: '' };
 
   return (
-    <div className="container mx-auto px-2 py-16">
+    <div className="py-16">
       {/* ===== DÜZƏLİŞ: İtmiş hissələr bura əlavə edildi ===== */}
       <div>
         <span className="text-[#1C746F] text-sm font-medium">Contact Us</span>
         <h2 className="text-3xl font-medium mb-10">Get in Touch</h2>
       </div>
-      <div className="bg-[#f5fbfd] mx-auto p-4 md:p-8 rounded-lg">
+      <div className="bg-[#f5fbfd] mx-auto p-0 md:p-8 rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           
           <div className="bg-card p-6 rounded-lg flex items-center space-x-4">
