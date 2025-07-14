@@ -23,21 +23,24 @@ export default async function MissionPage() {
               {missionData.description}
             </p>
           </div>
-          <div className="md:w-1/2 flex justify-end ">
+          <div className="md:w-1/2  flex justify-end ">
+          <div className='flex justify-end'>
+
             <Image
               src={missionData.image}
               alt={missionData.title}
               width={527}
               height={272}
-              className="rounded-lg shadow-lg object-cover w-[373px] h-[182px] md:w-[527px] md:h-[272px]"
+              className="rounded-lg shadow-lg object-cover w-full h-full md:w-[527px] md:h-[272px]"
             />
+          </div>
           </div>
         </section>
       )}
 
       {visionData && (
         <section className="flex flex-col md:flex-row-reverse items-center justify-center  w-full gap-12 ">
-          <div className="flex flex-col md:w-1/2  md:border-l-2 border-[#53B8B8] pl-4 md:pl-12">
+          <div className="flex flex-col md:w-1/2 border-r-2 md:border-r-0   md:border-l-2 border-[#53B8B8]   pr-4 md:pr-0 md:pl-12">
             <div className="flex items-center mb-4">
               <span className="text-[#1C746F] text-sm font-medium">About us</span>
             </div>
@@ -47,13 +50,16 @@ export default async function MissionPage() {
             </p>
           </div>
           <div className="md:w-1/2 flex justify-start ">
+        <div className='w-full'>
+
             <Image
               src={visionData.image}
               alt={visionData.title}
-              width={500}
+              width={527}
               height={272}
-              className="rounded-lg shadow-lg object-cover w-[373px] h-[182px] md:w-[527px] md:h-[272px] "
+              className="rounded-lg shadow-lg object-cover w-full h-full md:w-[527px] md:h-[272px] "
             />
+        </div>
           </div>
         </section>
       )}

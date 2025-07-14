@@ -22,7 +22,7 @@ export default async function AboutPage() {
         />
       </div>
 
-      <div className="relative w-full aspect-[527/272]">
+      <div className="relative w-full aspect-[427/272]">
         <Image
           src={data.image}
           alt={data.title || "About us image"}

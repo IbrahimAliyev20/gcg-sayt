@@ -40,14 +40,17 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
       const response = await submitContactForm(payload);
       
       if (response.status) {
-        setFormStatus({ message: 'Mesajınız uğurla göndərildi!', type: 'success' });
+        // DƏYİŞİKLİK: Mesaj ingilis dilinə tərcümə edildi
+        setFormStatus({ message: 'Your message has been sent successfully!', type: 'success' });
         reset(); 
       } else {
-        setFormStatus({ message: response.message || 'Xəta baş verdi.', type: 'error' });
+        // DƏYİŞİKLİK: Mesaj ingilis dilinə tərcümə edildi
+        setFormStatus({ message: response.message || 'An error occurred.', type: 'error' });
       }
 
     } catch (error) {
-      let errorMessage = 'Naməlum server xətası baş verdi.';
+      // DƏYİŞİKLİK: Mesaj ingilis dilinə tərcümə edildi
+      let errorMessage = 'An unknown server error occurred.';
       if (error instanceof Error) {
         errorMessage = error.message;
       }
@@ -59,7 +62,6 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
 
   return (
     <div className="py-16">
-      {/* ===== DÜZƏLİŞ: İtmiş hissələr bura əlavə edildi ===== */}
       <div>
         <span className="text-[#1C746F] text-sm font-medium">Contact Us</span>
         <h2 className="text-3xl font-medium mb-10">Get in Touch</h2>
@@ -96,13 +98,15 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
           <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-8">We Are Just a Message Away</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-20">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div><label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">Full name</label><Input id="name" placeholder="Enter your full name" {...register("name", { required: "Ad mütləqdir." })} />{errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}</div>
-              <div><label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-2">Email</label><Input id="email" type="email" placeholder="Enter your email" {...register("email", { required: "Email mütləqdir." })} />{errors.email && <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>}</div>
-              <div><label htmlFor="phone" className="block text-sm font-medium text-muted-foreground mb-2">Phone Number</label><Input id="phone" type="tel" placeholder="Enter your phone number" {...register("phone", { required: "Nömrə mütləqdir." })} />{errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone.message}</p>}</div>
-              <div><label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-2">Message</label><Textarea id="message" placeholder="Enter your message" rows={5} {...register("message", { required: "Mesaj mütləqdir." })} />{errors.message && <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>}</div>
+              {/* DƏYİŞİKLİK: Validasiya mesajları ingilis dilinə tərcümə edildi */}
+              <div><label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">Full name</label><Input id="name" placeholder="Enter your full name" {...register("name", { required: "Name is required." })} />{errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}</div>
+              <div><label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-2">Email</label><Input id="email" type="email" placeholder="Enter your email" {...register("email", { required: "Email is required." })} />{errors.email && <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>}</div>
+              <div><label htmlFor="phone" className="block text-sm font-medium text-muted-foreground mb-2">Phone Number</label><Input id="phone" type="tel" placeholder="Enter your phone number" {...register("phone", { required: "Phone number is required." })} />{errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone.message}</p>}</div>
+              <div><label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-2">Message</label><Textarea id="message" placeholder="Enter your message" rows={5} {...register("message", { required: "Message is required." })} />{errors.message && <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>}</div>
 
               <Button type="submit" disabled={isSubmitting} className="w-full bg-[#53B8B8] py-6 text-white">
-                {isSubmitting ? "Göndərilir..." : "Send a message"} 
+                {/* DƏYİŞİKLİK: Mesaj ingilis dilinə tərcümə edildi */}
+                {isSubmitting ? "Sending..." : "Send a message"} 
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
               
@@ -112,7 +116,7 @@ export default function ContactPage({ contact }: { contact: ContactType }) {
                 </p>
               )}
             </form>
-            <div className="relative  w-full md:w-[90%]  h-[324px] md:h-[86%]  rounded-lg overflow-hidden">
+            <div className="relative w-full md:w-[90%] h-[324px] md:h-[86%] rounded-lg overflow-hidden">
               <iframe src={safeContact.map} width="100%" height="100%" loading="lazy" className="border-0"></iframe>
             </div>
           </div>
