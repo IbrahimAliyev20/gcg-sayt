@@ -18,7 +18,6 @@ const navLinkData = [
 
 export function FooterMain({ socialLinks }: { socialLinks: SocialMediaType[] }) {
   const pathname = usePathname(); 
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-slate-50 border-t border-slate-200">
@@ -62,8 +61,8 @@ export function FooterMain({ socialLinks }: { socialLinks: SocialMediaType[] }) 
           </nav>
 
           <div className="text-center text-xs text-gray-500">
-            <p>Copyright  &copy; {currentYear} by <span> <Link href="https://markup.az/" target='_blank' className='text-blue-600 hover:underline'>MarkUp Agency</Link></span>. All rights reserved.</p>
-            
+            <p>Copyright © Caspian Green Galleon. Made by <span> <Link href="https://markup.az/" target='_blank' className='text-blue-600 hover:underline'>MarkUp</Link></span>. All rights reserved.</p>
+
           </div>
 
         </div>

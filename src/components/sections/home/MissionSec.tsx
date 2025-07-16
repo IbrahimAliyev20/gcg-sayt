@@ -16,7 +16,6 @@ export default async function MissionPage() {
         <section className="flex flex-col md:flex-row items-center justify-center w-full  mb-16 gap-12 md:gap-0 ">
           <div className="flex flex-col md:w-1/2 border-l-2 border-[#53B8B8] pl-4 md:pl-12">
             <div className="flex items-center mb-4">
-              <span className="text-[#1C746F] text-sm font-medium">About us</span>
             </div>
             <h2 className="text-[22px] md:text-4xl font-medium mb-4">{missionData.title}</h2>
             <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">
@@ -42,7 +41,6 @@ export default async function MissionPage() {
         <section className="flex flex-col md:flex-row-reverse items-center justify-center  w-full gap-12 ">
           <div className="flex flex-col md:w-1/2 border-r-2 md:border-r-0   md:border-l-2 border-[#53B8B8]   pr-4 md:pr-0 md:pl-12">
             <div className="flex items-center mb-4">
-              <span className="text-[#1C746F] text-sm font-medium">About us</span>
             </div>
             <h2 className="text-[22px] md:text-4xl font-medium mb-4">{visionData.title}</h2>
             <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">

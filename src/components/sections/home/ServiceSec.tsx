@@ -1,45 +1,36 @@
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
-import ServiceCard from "@/components/shared/ServiceCard";
 import { getOurServices } from "@/lib/our-service";
 import { getHero } from "@/lib/hero";
 
 export async function ServiceSec() {
-  const [servicesResponse, heroDataArr] = await Promise.all([
+  const [, heroDataArr] = await Promise.all([
     getOurServices(),
-    getHero()
+    getHero(),
   ]);
-  
-  const featuredServices = servicesResponse.data.slice(0, 4);
-  const serviceHero = heroDataArr.find(h => h.name === 'Service');
+
+  const serviceHero = heroDataArr.find((h) => h.name === "Service");
 
   return (
     <section className="py-8 md:py-20 bg-white">
-      <div >
+      <div>
         <div className="flex flex-col md:flex-row gap-6 lg:gap-8">
-          {/* Sol Tərəf */}
-          <div className="flex flex-col justify-between md:w-[474px]">
+          {/* Sol Tərəf (70%) */}
+          <div className="flex flex-col justify-between md:w-[55%]">
             <div>
               <p className="text-teal-600 text-sm font-semibold mb-2 tracking-wider">
                 Our Services
               </p>
-              <h2 className="text-[22px] md:text-[32px] font-medium text-gray-900">
+              <h2 className="text-[22px] md:text-[32px] font-medium text-gray-900 mb-4">
                 {serviceHero?.title || "Efficient, Green, Reliable Services"}
               </h2>
-              <Image
-                src="/icons/iconservicesec.png"
-                alt="Service Icon"
-                width={120}
-                height={12}
-                className="mt-4"
-              />
+          
             </div>
             <div className="w-full h-[250px] sm:h-[300px] md:h-[313px] relative mt-8 md:mt-0">
               <Image
-                src="/images/service.jpg" 
+                src="/images/service.jpg"
                 alt="Ship with modern wind sails"
                 fill
                 className="object-cover rounded-2xl"
@@ -47,17 +38,15 @@ export async function ServiceSec() {
             </div>
           </div>
 
-          <div className="w-full md:flex-1 flex flex-col justify-between">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
-              {featuredServices.map((service, index) => (
-                    <ServiceCard
-                      image={service.image}
-                      key={index}
-                      title={service.title}
-                      description={service.description}
-                      
-                    />
-              ))}
+          {/* Sağ Tərəf (30%) */}
+          <div className="w-full md:w-[45%] flex flex-col justify-between">
+            <div className="w-full h-full justify-center items-center flex flex-wrap gap-6 md:gap-8 text-[18px]">
+              Caspian Green Galleon offers a wide range of research, advisory,
+              and capacity-building services tailored to support the green
+              transition in the Caspian region. Our services are designed to
+              meet the needs of international organizations, governments, and
+              private stakeholders seeking to implement sustainable energy and
+              environmental policies.
             </div>
             <div className="text-center mt-8 md:mt-auto pt-6">
               <Link
