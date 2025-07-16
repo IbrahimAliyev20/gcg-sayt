@@ -11,6 +11,7 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
   return (
     <div className="group w-full h-full flex flex-col space-y-4 bg-white hover:bg-[#F7FEFE] rounded-lg p-6 cursor-pointer">
       <div className="relative bg-[#EEFFFE] w-[56px] h-[56px] flex items-center justify-center rounded-lg transition-colors group-hover:bg-[#53B8B8]">
+       
         <Image
           src={image}
           alt={title}
